@@ -14,9 +14,8 @@ RUN apt purge -y $PHPSIZE_DEPS \
     && apt clean all
 
 WORKDIR /app
-RUN chown -R www-data:www-data /app
-COPY --chown=www-data:www-data . .
-
-RUN npm i
+COPY package*.json ./
+RUN npm install
+COPY . .
 
 CMD npm run start
