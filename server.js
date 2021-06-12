@@ -7,9 +7,10 @@ const port = 3000;
 app.use(express.json());
 
 app.post('/v1/invoice/generate', (request, response) => {
-    const twigData = request.body.data;
+    const parameters = request.body.parameters;
+    const filename = './templates/{country}.html.twig'.replace('{country}', request.body.country);
 
-    Twig.renderFile('./invoice.html.twig', {...twigData}, (err, html) => {
+    Twig.renderFile(filename, {...parameters}, (err, html) => {
         (async () => {
             const browser = await puppeteer.launch({
                 headless: true,
