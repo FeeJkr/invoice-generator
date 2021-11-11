@@ -84,7 +84,7 @@
                     <td style="border: 1px solid black;">nd.</td>
                     <td style="border: 1px solid black;">1</td>
                     <td style="border: 1px solid black;">{{ product.netPrice|number_format(2, '.', '') }}</td>
-                    <td style="border: 1px solid black;">23%</td>
+                    <td style="border: 1px solid black;">{{ vatPercentage }}%</td>
                     <td style="border: 1px solid black;">{{ product.netPrice|number_format(2, '.', '') }}</td>
                     <td style="border: 1px solid black;">{{ product.taxPrice|number_format(2, '.', '') }}</td>
                     <td style="border: 1px solid black;">{{ product.grossPrice|number_format(2, '.', '') }}</td>
@@ -106,7 +106,7 @@
             </thead>
             <tbody>
             <tr style="border: 1px solid black; text-align: center;">
-                <td style="border: 1px solid black;">23%</td>
+                <td style="border: 1px solid black;">{{ vatPercentage }}%</td>
                 <td style="border: 1px solid black;">{{ totalNetPrice|number_format(2, '.', '') }}</td>
                 <td style="border: 1px solid black;">{{ totalTaxPrice|number_format(2, '.', '') }}</td>
                 <td style="border: 1px solid black;">{{ totalGrossPrice|number_format(2, '.', '') }}</td>
